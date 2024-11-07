@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import LayoutWrapper from "@/components/layout";
+import LayoutWrapper from "@/components/layout/appLayout";
 import { MantineProvider } from "@mantine/core";
 
 export const metadata: Metadata = {

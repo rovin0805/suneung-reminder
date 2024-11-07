@@ -13,6 +13,9 @@ const config: Config = {
     },
     fontFamily: {
       tenada: ["Tenada"],
+      pretendard400: ["Pretendard-Regular"],
+      pretendard500: ["Pretendard-Medium"],
+      pretendard600: ["Pretendard-SemiBold"],
     },
   },
   plugins: [],

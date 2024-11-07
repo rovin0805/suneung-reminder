@@ -1,8 +1,6 @@
 import { PropsWithChildren } from "react";
 import Header from "./Header";
 
-const HEADER_HEIGHT = 83;
-
 const LayoutWrapper = ({ children }: PropsWithChildren<{}>) => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100">
@@ -11,7 +9,7 @@ const LayoutWrapper = ({ children }: PropsWithChildren<{}>) => {
         <Header />
 
         {/* 스크롤 가능한 콘텐츠 영역 */}
-        <main className="flex-1 overflow-y-auto p-5">{children}</main>
+        <main className="overflow-y-auto">{children}</main>
       </div>
     </div>
   );
