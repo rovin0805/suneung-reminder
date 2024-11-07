@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "@/styles/globals.css";
 import LayoutWrapper from "@/components/layout";
 import { MantineProvider } from "@mantine/core";
 
-const geistSans = localFont({
-  src: "../../public/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../../public/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
 export const metadata: Metadata = {
-  title: "눈 떠보니 수능날? | AFTERDINNERCLUB",
+  title: "눈 떠보니 수능날? | afterdinnerclub",
   description: "내가 봤던 수능 다시보기!",
   icons: {
     icon: "/svg/character.svg",
@@ -35,9 +23,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`antialiased`}>
         <MantineProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
         </MantineProvider>

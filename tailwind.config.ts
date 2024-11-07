@@ -11,6 +11,9 @@ const config: Config = {
     extend: {
       colors,
     },
+    fontFamily: {
+      tenada: ["Tenada"],
+    },
   },
   plugins: [],
 };
