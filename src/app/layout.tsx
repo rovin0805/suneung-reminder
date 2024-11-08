@@ -22,6 +22,10 @@ export default function RootLayout({
         <title>눈 떠보니 수능날?</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+        />
       </head>
       <body className={`antialiased`}>
         <MantineProvider>
