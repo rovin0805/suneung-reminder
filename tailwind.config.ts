@@ -16,6 +16,8 @@ const config: Config = {
       pretendard400: ["Pretendard-Regular"],
       pretendard500: ["Pretendard-Medium"],
       pretendard600: ["Pretendard-SemiBold"],
+      pretendard700: ["Pretendard-Bold"],
+      pretendard800: ["Pretendard-ExtraBold"],
     },
   },
   plugins: [],

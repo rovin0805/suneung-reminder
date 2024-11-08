@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import Header from "./Header";
 
-const LayoutWrapper = ({ children }: PropsWithChildren<{}>) => {
+const LayoutWrapper = ({ children }: PropsWithChildren) => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100">
       {/* 모바일처럼 보이게 하는 최대 너비 설정 */}

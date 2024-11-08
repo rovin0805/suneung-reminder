@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { ActionIcon } from "@mantine/core";
 
 const INSTA_URL =
@@ -8,6 +9,11 @@ const INSTA_URL =
 
 const Header = () => {
   const openInsta = () => window.open(INSTA_URL, "_blank");
+
+  const router = useRouter();
+  const goToLanding = () => {
+    router.push("/");
+  };
 
   const share = async () => {
     if (navigator.share) {
@@ -33,13 +39,15 @@ const Header = () => {
           />
         </ActionIcon>
 
-        <Image
-          src="/svg/logo.svg"
-          width={200}
-          height={25}
-          alt="logo"
-          priority
-        />
+        <ActionIcon onClick={goToLanding}>
+          <Image
+            src="/svg/logo.svg"
+            width={200}
+            height={25}
+            alt="logo"
+            priority
+          />
+        </ActionIcon>
 
         <ActionIcon onClick={share}>
           <Image
