@@ -64,7 +64,7 @@ const CustomSelect = ({ currentValue, onChange }: CustomSelectProps) => {
 
       {isOpen && (
         <ul className="absolute w-full max-h-[200px] overflow-y-auto bg-white border border-gray-300 rounded-md mt-2 z-10">
-          {[RANDOM, ...YEAR_OPTIONS].map((option, index) => (
+          {YEAR_OPTIONS.map((option, index) => (
             <li
               key={index}
               className="px-4 py-2 text-primary-700 cursor-pointer hover:bg-gray-100"
