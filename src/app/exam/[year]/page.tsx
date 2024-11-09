@@ -10,6 +10,8 @@ import { useOMRStore } from "@/stores/omr";
 import { ValidAnswerType } from "@/types/exam";
 import SharedButton from "@/components/action/SharedButton";
 import { FULL_WIDTH } from "@/styles/scale";
+import LunchTime from "./_components/LunchTime";
+import GradingTime from "./_components/GradingTime";
 
 /**
  * 문제 이미지 이름 형식 : {year+1}/{year+1}_{k | m | e}_q
@@ -54,11 +56,11 @@ const ExamPage = () => {
   };
 
   if (isLunchTime) {
-    return <></>;
+    return <LunchTime />;
   }
 
   if (isGradingTime) {
-    return <></>;
+    return <GradingTime />;
   }
 
   const onClickAnswer = (num: ValidAnswerType) => {
@@ -67,10 +69,15 @@ const ExamPage = () => {
     });
   };
 
+  const onHandleImgLoader = ({ src }: { src: string }) => {
+    return `/img/exams/${+year + 1}/${src}`;
+  };
+
   return (
     <ExamContainer>
       <Image
-        src={`/img/exams/${+year + 1}/${+year + 1}_${currentTime}_q.png`}
+        src={`${+year + 1}_${currentTime}_q.png`}
+        loader={onHandleImgLoader}
         alt="exam"
         width={FULL_WIDTH - 40}
         height={400}
@@ -88,9 +95,8 @@ const ExamPage = () => {
               onClick={() => onClickAnswer(num as ValidAnswerType)}
             >
               <Image
-                src={`/img/exams/${+year + 1}/${
-                  +year + 1
-                }_${currentTime}_a0${num}.png`}
+                src={`${+year + 1}_${currentTime}_a0${num}.png`}
+                loader={onHandleImgLoader}
                 alt={`answer${num}`}
                 width={FULL_WIDTH - 40}
                 height={800}
@@ -113,9 +119,10 @@ const ExamPage = () => {
       />
 
       <div
-        className={`absolute bottom-0 bg-white w-full max-w-md py-5 flex items-center justify-center`}
+        className="fixed bottom-[0px] bg-white w-full max-w-md py-3 flex items-center justify-center"
         style={{
           boxShadow: "0px -4px 4px 0px #00000040",
+          zIndex: 50, // 다른 요소보다 위에 뜨도록 설정
         }}
       >
         <SharedButton

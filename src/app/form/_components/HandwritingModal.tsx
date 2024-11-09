@@ -52,16 +52,11 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
       }
     >
       <Col className="my-[40px]" spacing={20}>
-        <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid w-full">
+        <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid">
           <p className="leading-[16px] font-pretendard500">{handwriting}</p>
         </div>
 
-        <Row
-          className="rounded-[5px] overflow-hidden h-[60px] bg-white"
-          style={{
-            border: "1px solid #000000",
-          }}
-        >
+        <Row className="rounded-[5px] overflow-hidden h-[60px] bg-white border border-solid mx-5">
           <div className="bg-[#EEEEEE] px-5 py-[10px] h-full flex-col items-center justify-center w-[30%] border-r border-solid">
             <p
               className={`font-pretendard700 leading-[20px] flex text-sm md:text-base`}

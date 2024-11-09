@@ -17,3 +17,4 @@
 ## TODO:
 
 - 반응형 style
+- img loading speed
