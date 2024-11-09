@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CurrentTime, ExamSubjectType, ValidYearType } from "@/types/exam";
+import { CurrentTime, ValidYearType } from "@/types/exam";
 
 /**
  * 현재 시험 교시 정보

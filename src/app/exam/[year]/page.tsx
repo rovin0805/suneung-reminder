@@ -49,8 +49,8 @@ const ExamPage = () => {
         break;
     }
     setTimeout(() => {
-      window.scrollTo(0, 0), 100;
-    });
+      window.scrollTo(0, 0);
+    }, 100);
   };
 
   if (isLunchTime) {
