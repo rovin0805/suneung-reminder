@@ -9,6 +9,7 @@ import Col from "@/components/layout/Col";
 import { useExamStore } from "@/stores/exam";
 import { HAND_WRITING } from "../_constants/handwriting";
 import Row from "@/components/layout/Row";
+import { FULL_WIDTH, adjustFontSize } from "@/styles/scale";
 
 /**
  * 필적 확인란
@@ -49,22 +50,28 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
         </button>
       }
     >
-      <Col className="my-[40px] w-full" spacing={20}>
-        <div className="bg-[#DDDDDD] py-[10px] w-[304px] text-center border border-solid">
+      <Col className="my-[40px]" spacing={20}>
+        <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid w-full">
           <p className="leading-[16px] font-pretendard500">{handwriting}</p>
         </div>
 
         <Row
-          className="rounded-[5px] overflow-hidden w-[304px] h-[60px] bg-white"
+          className="rounded-[5px] overflow-hidden h-[60px] bg-white"
           style={{
             border: "1px solid #000000",
           }}
         >
           <div className="bg-[#EEEEEE] px-5 py-[10px] h-full flex-col items-center justify-center w-[30%] border-r border-solid">
-            <p className="font-pretendard700 leading-[20px] flex">
-              필<p className="text-transparent">칸</p>적
+            <p
+              className={`font-pretendard700 leading-[20px] flex text-[${adjustFontSize()}px]`}
+            >
+              필<span className="text-transparent">칸</span>적
             </p>
-            <p className="font-pretendard700 leading-[20px]">확인란</p>
+            <p
+              className={`font-pretendard700 leading-[20px] text-[${adjustFontSize()}px]`}
+            >
+              확인란
+            </p>
           </div>
           <div className="px-[10px] w-[70%] flex-col self-start relative ">
             <textarea

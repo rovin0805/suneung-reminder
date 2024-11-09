@@ -35,10 +35,11 @@ const DefaultModal = ({
       onOpenChange={onOpenChange}
       hideCloseButton
       shouldBlockScroll
-      size="xs"
       isDismissable={isDismissable}
+      placement="center"
+      size="xs"
     >
-      <ModalContent className="p-[40px]">
+      <ModalContent className={`py-[40px]`}>
         {(onClose) => (
           <>
             <ModalHeader className="justify-center p-0">
