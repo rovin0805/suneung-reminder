@@ -21,7 +21,13 @@ const defaultAnswers: OMRType = {
 
 export const useOMRStore = create<OMRState>((set) => ({
   omr: defaultAnswers,
-  setOMR: (answers) => set({ omr: { ...defaultAnswers, ...answers } }),
+  setOMR: (answers) =>
+    set((state) => ({
+      omr: {
+        ...state.omr,
+        ...answers,
+      },
+    })),
   reset: () =>
     set({
       omr: defaultAnswers,

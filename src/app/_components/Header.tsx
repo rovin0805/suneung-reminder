@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { share } from "@/utils/share";
 
 const INSTA_URL =
   "https://www.instagram.com/afterdinnerclub.kr?igsh=bzc4dDVwdXVldDdo";
@@ -12,17 +13,6 @@ const Header = () => {
   const router = useRouter();
   const goToLanding = () => {
     router.push("/");
-  };
-
-  const share = async () => {
-    if (navigator.share) {
-      // TODO: og tag
-      await navigator.share({
-        title: "AFTERDINNERCLUB",
-        text: "내가 봤던 수능 다시보기!",
-        url: window.location.href,
-      });
-    }
   };
 
   return (

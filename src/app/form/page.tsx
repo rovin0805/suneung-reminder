@@ -36,11 +36,11 @@ const FormPage = () => {
   };
 
   const onClickButton = () => {
-    storeYear(year);
-    storeName(name!);
     if (year === END_YEAR) {
       onOpenCharmModal();
     } else {
+      storeYear(year);
+      storeName(name!);
       onOpenHandwritingModal();
     }
   };

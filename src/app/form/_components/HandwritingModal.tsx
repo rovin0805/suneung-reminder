@@ -9,6 +9,7 @@ import Col from "@/components/layout/Col";
 import { useExamStore } from "@/stores/exam";
 import { HAND_WRITING } from "../_constants/handwriting";
 import Row from "@/components/layout/Row";
+import { useOMRStore } from "@/stores/omr";
 
 /**
  * 필적 확인란
@@ -18,9 +19,16 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
   const year = useExamStore((state) => state.year);
   const handwriting = HAND_WRITING[(year + "") as keyof typeof HAND_WRITING];
   const [userText, setUserText] = useState("");
+  const setCurrentTime = useExamStore((state) => state.setCurrentTime);
+  const resetOMR = useOMRStore((state) => state.reset);
 
   const router = useRouter();
   const goToExam = () => {
+    // 새로 응시할 때는 기존 상태 초기화
+    setUserText("");
+    setCurrentTime("k");
+    resetOMR();
+
     router.push(`/exam/${year}`);
   };
 
@@ -52,11 +60,11 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
       }
     >
       <Col className="my-[40px]" spacing={20}>
-        <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid">
+        <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid max-w-md">
           <p className="leading-[16px] font-pretendard500">{handwriting}</p>
         </div>
 
-        <Row className="rounded-[5px] overflow-hidden h-[60px] bg-white border border-solid mx-5">
+        <Row className="rounded-[5px] overflow-hidden min-h-[60px] bg-white border border-solid mx-5">
           <div className="bg-[#EEEEEE] px-5 py-[10px] h-full flex-col items-center justify-center w-[30%] border-r border-solid">
             <p
               className={`font-pretendard700 leading-[20px] flex text-sm md:text-base`}
