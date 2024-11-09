@@ -5,25 +5,25 @@ import { ExamSubjectType, ValidAnswerType } from "@/types/exam";
  * 유저가 선태한 과목별 답안
  */
 
+type OMRType = Record<ExamSubjectType, ValidAnswerType | null>;
+
 interface OMRState {
-  answers: Record<ExamSubjectType, ValidAnswerType | null>;
-  setAnswers: (
-    answers: Record<ExamSubjectType, ValidAnswerType | null>
-  ) => void;
+  omr: OMRType;
+  setOMR: (answers: Partial<OMRType>) => void;
   reset: () => void;
 }
 
-const defaultAnswers: Record<ExamSubjectType, ValidAnswerType | null> = {
+const defaultAnswers: OMRType = {
   k: null,
   m: null,
   e: null,
 };
 
 export const useOMRStore = create<OMRState>((set) => ({
-  answers: defaultAnswers,
-  setAnswers: (answers) => set({ answers }),
+  omr: defaultAnswers,
+  setOMR: (answers) => set({ omr: { ...defaultAnswers, ...answers } }),
   reset: () =>
     set({
-      answers: defaultAnswers,
+      omr: defaultAnswers,
     }),
 }));

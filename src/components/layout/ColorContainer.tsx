@@ -1,6 +1,5 @@
+import { HEADER_HEIGHT } from "@/styles/scale";
 import { PropsWithChildren } from "react";
-
-const HEADER_HEIGHT = 86;
 
 interface ColorContainerProps {
   className?: string; // className을 props로 받기 위한 설정

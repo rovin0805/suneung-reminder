@@ -24,6 +24,7 @@ export type ValidYearType =
   | typeof END_YEAR;
 
 export type ExamSubjectType = "k" | "m" | "e";
+export type CurrentTime = ExamSubjectType | "lunch" | "grading";
 
 export type ExamImgType = "q" | "a";
 

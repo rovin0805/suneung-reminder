@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { ExamSubjectType, ValidYearType } from "@/types/exam";
+import { CurrentTime, ExamSubjectType, ValidYearType } from "@/types/exam";
 
 /**
  * 현재 시험 교시 정보
@@ -13,15 +13,15 @@ import { ExamSubjectType, ValidYearType } from "@/types/exam";
 export interface ExamState {
   year: ValidYearType | null;
   setYear: (year: ValidYearType | null) => void;
-  currentSubject: ExamSubjectType;
-  setCurrentSubject: (subject: ExamSubjectType) => void;
+  currentTime: CurrentTime;
+  setCurrentTime: (subject: CurrentTime) => void;
   reset: () => void;
 }
 
 export const useExamStore = create<ExamState>((set) => ({
   year: null,
   setYear: (year) => set({ year }),
-  currentSubject: "k",
-  setCurrentSubject: (subject) => set({ currentSubject: subject }),
-  reset: () => set({ year: null, currentSubject: "k" }),
+  currentTime: "k",
+  setCurrentTime: (subject) => set({ currentTime: subject }),
+  reset: () => set({ year: null, currentTime: "k" }),
 }));

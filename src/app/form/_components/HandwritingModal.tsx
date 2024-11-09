@@ -9,7 +9,6 @@ import Col from "@/components/layout/Col";
 import { useExamStore } from "@/stores/exam";
 import { HAND_WRITING } from "../_constants/handwriting";
 import Row from "@/components/layout/Row";
-import { adjustFontSize } from "@/styles/scale";
 
 /**
  * 필적 확인란
@@ -21,7 +20,9 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
   const [userText, setUserText] = useState("");
 
   const router = useRouter();
-  const goToExam = () => router.push("/exam");
+  const goToExam = () => {
+    router.push(`/exam/${year}`);
+  };
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const text = e.target.value;
@@ -63,12 +64,12 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
         >
           <div className="bg-[#EEEEEE] px-5 py-[10px] h-full flex-col items-center justify-center w-[30%] border-r border-solid">
             <p
-              className={`font-pretendard700 leading-[20px] flex text-[${adjustFontSize()}px]`}
+              className={`font-pretendard700 leading-[20px] flex text-sm md:text-base`}
             >
               필<span className="text-transparent">칸</span>적
             </p>
             <p
-              className={`font-pretendard700 leading-[20px] text-[${adjustFontSize()}px]`}
+              className={`font-pretendard700 leading-[20px] text-sm md:text-base`}
             >
               확인란
             </p>
