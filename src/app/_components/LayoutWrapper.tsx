@@ -3,8 +3,11 @@
 import { PropsWithChildren } from "react";
 import { NextUIProvider } from "@nextui-org/react";
 import Header from "./Header";
+import useCheckAuth from "@/hooks/useCheckAuth";
 
 const LayoutWrapper = ({ children }: PropsWithChildren) => {
+  useCheckAuth();
+
   return (
     <NextUIProvider>
       <div className="min-h-screen flex flex-col items-center bg-gray-100">
