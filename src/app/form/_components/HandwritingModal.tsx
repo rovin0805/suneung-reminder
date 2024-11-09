@@ -9,7 +9,7 @@ import Col from "@/components/layout/Col";
 import { useExamStore } from "@/stores/exam";
 import { HAND_WRITING } from "../_constants/handwriting";
 import Row from "@/components/layout/Row";
-import { FULL_WIDTH, adjustFontSize } from "@/styles/scale";
+import { adjustFontSize } from "@/styles/scale";
 
 /**
  * 필적 확인란
