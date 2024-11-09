@@ -36,6 +36,7 @@ const ExamPage = () => {
     switch (currentTime) {
       case "k":
         setCurrentTime("m");
+        window.scrollTo(0, 0);
         break;
       case "m":
         setCurrentTime("lunch");
@@ -50,9 +51,6 @@ const ExamPage = () => {
         setCurrentTime("k");
         break;
     }
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
   };
 
   if (isLunchTime) {
