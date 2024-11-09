@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import ColorContainer from "@/components/layout/ColorContainer";
 import Col from "@/components/layout/Col";
@@ -31,6 +31,18 @@ export default function HomePage() {
     router.push("/form");
   };
 
+  const [imageWidth, setImageWidth] = useState(270);
+  useEffect(() => {
+    const updateImageWidth = () => {
+      setImageWidth(window.innerWidth * 0.7);
+    };
+    updateImageWidth();
+    window.addEventListener("resize", updateImageWidth);
+    return () => {
+      window.removeEventListener("resize", updateImageWidth);
+    };
+  }, []);
+
   return (
     <ColorContainer className="cursor-pointer" onClick={goToFormScreen}>
       <Col className="mb-[50px]">
@@ -45,7 +57,7 @@ export default function HomePage() {
 
         <Image
           src="/img/landing.png"
-          width={270}
+          width={imageWidth}
           height={300}
           alt="수능날"
           priority

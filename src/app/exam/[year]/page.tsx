@@ -118,6 +118,10 @@ const ExamPage = () => {
         priority
       />
 
+      <p className="font-pretendard500 text-[#666666] leading-[17px] mt-5 text-sm md:text-base">
+        이 문제지에 관한 저작권은 한국교육과정평가원에 있습니다.
+      </p>
+
       <div
         className="fixed bottom-[0px] bg-white w-full max-w-md py-3 flex items-center justify-center"
         style={{
