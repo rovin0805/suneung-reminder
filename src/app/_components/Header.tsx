@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ActionIcon } from "@mantine/core";
 
 const INSTA_URL =
   "https://www.instagram.com/afterdinnerclub.kr?igsh=bzc4dDVwdXVldDdo";
@@ -29,7 +28,7 @@ const Header = () => {
   return (
     <header className="w-full bg-black pt-5">
       <div className="p-5 w-full flex justify-between">
-        <ActionIcon onClick={openInsta}>
+        <button onClick={openInsta}>
           <Image
             src="/svg/insta.svg"
             alt="insta"
@@ -37,9 +36,9 @@ const Header = () => {
             height={24}
             priority
           />
-        </ActionIcon>
+        </button>
 
-        <ActionIcon onClick={goToLanding}>
+        <button onClick={goToLanding}>
           <Image
             src="/svg/logo.svg"
             width={200}
@@ -47,9 +46,9 @@ const Header = () => {
             alt="logo"
             priority
           />
-        </ActionIcon>
+        </button>
 
-        <ActionIcon onClick={share}>
+        <button onClick={share}>
           <Image
             src="/svg/share.svg"
             alt="share"
@@ -57,7 +56,7 @@ const Header = () => {
             height={24}
             priority
           />
-        </ActionIcon>
+        </button>
       </div>
     </header>
   );

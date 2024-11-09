@@ -1,5 +1,6 @@
+// 응시연도
 export const START_YEAR = 2004;
-export const END_YEAR = 2023;
+export const END_YEAR = 2024;
 
 export type ValidYearType =
   | typeof START_YEAR

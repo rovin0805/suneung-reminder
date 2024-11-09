@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { MantineProvider } from "@mantine/core";
 import "@/styles/globals.css";
-import LayoutWrapper from "@/components/layout/appLayout";
+import LayoutWrapper from "@/app/_components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "눈 떠보니 수능날? | afterdinnerclub",
@@ -28,9 +27,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`antialiased`}>
-        <MantineProvider>
-          <LayoutWrapper>{children}</LayoutWrapper>
-        </MantineProvider>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
