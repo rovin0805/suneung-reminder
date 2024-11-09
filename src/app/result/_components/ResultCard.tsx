@@ -12,7 +12,8 @@ const ResultCard = ({ title, subtitle }: ResultCardProps) => {
 
   const getImgSrc = () => {
     if (!title) return "";
-    const pureTitle = title.replace(/[^가-힣]/g, ""); // 한글 이외의 문자 삭제
+    const pureTitle =
+      title === "0개 국어" ? "0개국어" : title.replace(/[^가-힣]/g, ""); // 한글 이외의 문자 삭제
     return `/img/character/${pureTitle}.png`;
   };
 
