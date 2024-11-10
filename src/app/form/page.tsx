@@ -31,7 +31,7 @@ const FormPage = () => {
 
   // 이름 검증 함수: 한글로 최대 10글자 이내
   const validateName = (input: string) => {
-    const koreanNameRegex = /^[가-힣]{1,10}$/;
+    const koreanNameRegex = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{1,10}$/;
     if (input.length > 10 || !koreanNameRegex.test(input)) {
       setError("최대 10글자 이내의 한글로 작성해 주세요.");
       return false;
