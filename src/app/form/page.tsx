@@ -87,7 +87,7 @@ const FormPage = () => {
             </p>
           </Row>
 
-          <div>
+          <Col>
             <input
               type="text"
               className="name-input text-primary-700 font-pretendard500 w-[250px] px-[16px] py-[10px] bg-white rounded-[5px] cursor-pointer focus:outline-none"
@@ -101,7 +101,7 @@ const FormPage = () => {
                 {error}
               </p>
             )}
-          </div>
+          </Col>
         </Col>
 
         <SharedButton
