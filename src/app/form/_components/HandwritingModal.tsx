@@ -24,11 +24,11 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
 
   const router = useRouter();
   const goToExam = () => {
+    scrollTo(0, 0);
     // 새로 응시할 때는 기존 상태 초기화
     setUserText("");
     setCurrentTime("k");
     resetOMR();
-
     router.push(`/exam/${year}`);
   };
 
