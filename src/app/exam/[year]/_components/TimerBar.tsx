@@ -71,7 +71,7 @@ const TimerBar = ({ onClickNext }: TimerBarProps) => {
 
   return (
     <div
-      className={`w-full md:max-w-md h-[10px] fixed`}
+      className={`w-full max-w-md h-[10px] fixed`}
       style={{
         top: `${dynamicTop}px`, // 동적으로 계산된 top 값 적용
         ...containerStyle,
