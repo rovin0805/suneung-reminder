@@ -62,6 +62,7 @@ const HandWritingModal = ({ isOpen, onOpenChange }: CommonModalProps) => {
           </p>
         </button>
       }
+      helperText="*총 3문제이며, 각 문항 제한 시간은 90초입니다"
     >
       <Col className="my-[40px]" spacing={20}>
         <div className="bg-[#DDDDDD] py-[10px] px-6 text-center border border-solid max-w-md">

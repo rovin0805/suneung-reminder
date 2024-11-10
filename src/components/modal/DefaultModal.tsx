@@ -3,6 +3,7 @@
 import { PropsWithChildren } from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/modal";
 import SharedButton from "../action/SharedButton";
+import Col from "../layout/Col";
 
 export interface CommonModalProps {
   isOpen: boolean;
@@ -16,6 +17,7 @@ interface DefaultModalProps extends CommonModalProps {
   buttonDisabled?: boolean;
   isDismissable?: boolean;
   ExtraButton?: React.ReactNode;
+  helperText?: string;
 }
 
 const DefaultModal = ({
@@ -28,6 +30,7 @@ const DefaultModal = ({
   onPress,
   isDismissable = true,
   ExtraButton,
+  helperText,
 }: PropsWithChildren<DefaultModalProps>) => {
   return (
     <Modal
@@ -50,15 +53,22 @@ const DefaultModal = ({
             <ModalBody className="items-center justify-center p-0">
               {children}
 
-              <SharedButton
-                isColor
-                text={buttonText}
-                onClick={() => {
-                  onPress();
-                  onClose();
-                }}
-                buttonProps={{ disabled: buttonDisabled }}
-              />
+              <Col spacing={8}>
+                <SharedButton
+                  isColor
+                  text={buttonText}
+                  onClick={() => {
+                    onPress();
+                    onClose();
+                  }}
+                  buttonProps={{ disabled: buttonDisabled }}
+                />
+                {helperText && (
+                  <p className="font-pretendard500 text-[11px] text-gray-500">
+                    {helperText}
+                  </p>
+                )}
+              </Col>
 
               {ExtraButton}
             </ModalBody>
