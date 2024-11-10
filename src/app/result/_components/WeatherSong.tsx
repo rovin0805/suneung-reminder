@@ -8,7 +8,7 @@ const WeatherSong = () => {
   return (
     <Col spacing={20}>
       <p className="font-pretendard600 text-[20px] leading-[24px]">
-        다시 보는 {year! + 1} 이모저모
+        다시 보는 {year! + 1} 수능 이모저모
       </p>
       <Image
         src={`/img/weather_song/weather_${year! + 1}.png`}
