@@ -9,7 +9,7 @@ import { useOMRStore } from "@/stores/omr";
 import { useStudentStore } from "@/stores/student";
 import { useRouter } from "next/navigation";
 
-// TODO: 응시자 수 api binding
+// TODO: 응시자 수 GET api binding
 
 export default function HomePage() {
   const resetExam = useExamStore((state) => state.reset);

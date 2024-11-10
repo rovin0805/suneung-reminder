@@ -13,8 +13,3 @@
   - [프리텐다드](https://noonnu.cc/font_page/694)
 
 ---
-
-## TODO:
-
-- 반응형 style
-- img loading speed
