@@ -56,12 +56,12 @@ const TimerBar = ({ onClickNext }: TimerBarProps) => {
   const containerStyle = {
     background:
       timeLeft > CHECK_POINT1
-        ? "linear-gradient(90deg, #7B51CF 0%, rgba(123, 81, 207, 0) 100%)"
+        ? "linear-gradient(90deg, #de8b46 0%, rgba(123, 81, 207, 0) 100%)"
         : "linear-gradient(90deg, #D65A3C 0%, rgba(214, 90, 60, 0) 100%)",
   };
   const progressBarStyle = {
     width: `${((LIMIT_SECONDS - timeLeft) / LIMIT_SECONDS) * 100}%`,
-    background: timeLeft > CHECK_POINT1 ? "#7B51CF" : "#D65A3C",
+    background: timeLeft > CHECK_POINT1 ? "#de8b46" : "#D65A3C",
   };
   const bubblePosition = {
     left: `calc(${((LIMIT_SECONDS - timeLeft) / LIMIT_SECONDS) * 100}% - ${
