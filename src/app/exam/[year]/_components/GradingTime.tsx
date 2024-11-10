@@ -24,7 +24,7 @@ const GradingTime = () => {
           return prevDots + ".";
         }
       });
-    }, 500);
+    }, 200);
 
     return () => clearInterval(interval);
   }, []);
