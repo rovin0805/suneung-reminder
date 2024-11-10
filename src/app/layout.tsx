@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import LayoutWrapper from "@/app/_components/LayoutWrapper";
+import { WEBSITE_URL } from "@/constants";
 
 export const metadata: Metadata = {
   title: "눈 떠보니 수능날? | afterdinnerclub",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   },
   keywords: ["수능", "수능날", "수능 다시 보기", "afterdinnerclub"],
   openGraph: {
-    url: "https://afterdinnerclub.kr/",
+    url: WEBSITE_URL,
     siteName: "afterdinnerclub",
     images: [
       {
