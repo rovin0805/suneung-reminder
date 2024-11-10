@@ -9,7 +9,7 @@ const GradingTime = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push("/result");
+      router.replace("/result");
     }, 3000);
   }, []);
 
