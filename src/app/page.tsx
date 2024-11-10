@@ -31,18 +31,6 @@ export default function HomePage() {
     router.push("/form");
   };
 
-  const [imageWidth, setImageWidth] = useState(270);
-  useEffect(() => {
-    const updateImageWidth = () => {
-      setImageWidth(window.innerWidth * 0.7);
-    };
-    updateImageWidth();
-    window.addEventListener("resize", updateImageWidth);
-    return () => {
-      window.removeEventListener("resize", updateImageWidth);
-    };
-  }, []);
-
   return (
     <ColorContainer className="cursor-pointer" onClick={goToFormScreen}>
       <Col className="mb-[50px]">
@@ -57,7 +45,7 @@ export default function HomePage() {
 
         <Image
           src="/img/landing.png"
-          width={imageWidth}
+          width={270}
           height={300}
           alt="수능날"
           priority
