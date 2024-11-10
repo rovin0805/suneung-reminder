@@ -4,6 +4,7 @@ import { useExamStore } from "@/stores/exam";
 
 const WeatherSong = () => {
   const year = useExamStore((state) => state.year);
+
   return (
     <Col spacing={20}>
       <p className="font-pretendard600 text-[20px] leading-[24px]">

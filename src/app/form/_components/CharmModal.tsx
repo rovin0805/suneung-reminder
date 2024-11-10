@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import DefaultModal, {
   CommonModalProps,
 } from "@/components/modal/DefaultModal";
 import Col from "@/components/layout/Col";
-import Image from "next/image";
 
 /**
  * 행운 부적

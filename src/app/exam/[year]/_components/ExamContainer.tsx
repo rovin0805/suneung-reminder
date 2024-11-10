@@ -1,14 +1,15 @@
-import { HEADER_HEIGHT } from "@/styles/scale";
 import { PropsWithChildren } from "react";
+import { HEADER_HEIGHT } from "@/styles/scale";
+import Col from "@/components/layout/Col";
 
 const ExamContainer = ({ children }: PropsWithChildren) => {
   return (
-    <div
-      className={`bg-white px-5 pt-[40px] pb-[100px] flex flex-col items-center`}
+    <Col
+      className={`bg-white px-5 pt-[50px] pb-[100px]`}
       style={{ minHeight: `calc(100vh - ${HEADER_HEIGHT}px)` }}
     >
       {children}
-    </div>
+    </Col>
   );
 };
 

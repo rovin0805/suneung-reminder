@@ -7,13 +7,13 @@
  */
 
 import { useEffect } from "react";
-import { useStudentStore } from "@/stores/student";
 import { usePathname, useRouter } from "next/navigation";
+import { useStudentStore } from "@/stores/student";
 
 const useCheckAuth = () => {
   const router = useRouter();
-  const studentInfo = useStudentStore((state) => state.name);
   const path = usePathname();
+  const studentInfo = useStudentStore((state) => state.name);
 
   useEffect(() => {
     const isHome = path === "/";

@@ -5,7 +5,7 @@ interface TimerBubbleMsgProps {
   bubblePosition: React.CSSProperties;
 }
 
-const TimerBUbbleMsg = ({ message, bubblePosition }: TimerBubbleMsgProps) => {
+const TimerBubbleMsg = ({ message, bubblePosition }: TimerBubbleMsgProps) => {
   return (
     <div className="absolute top-[17px]" style={bubblePosition}>
       <div className="relative px-[10px] py-[6px] rounded-[5px] bg-primary-700 w-fit">
@@ -28,4 +28,4 @@ const TimerBUbbleMsg = ({ message, bubblePosition }: TimerBubbleMsgProps) => {
   );
 };
 
-export default TimerBUbbleMsg;
+export default TimerBubbleMsg;

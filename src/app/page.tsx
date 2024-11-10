@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import ColorContainer from "@/components/layout/ColorContainer";
 import Col from "@/components/layout/Col";
 import { useExamStore } from "@/stores/exam";
 import { useOMRStore } from "@/stores/omr";
 import { useStudentStore } from "@/stores/student";
-import { useRouter } from "next/navigation";
 
 // TODO: 응시자 수 GET api binding
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import ColorContainer from "@/components/layout/ColorContainer";
 import { useRouter } from "next/navigation";
+import ColorContainer from "@/components/layout/ColorContainer";
 
 const GradingTime = () => {
   const [dots, setDots] = useState(".");

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ColorContainer from "@/components/layout/ColorContainer";
-import { useExamStore } from "@/stores/exam";
 import Col from "@/components/layout/Col";
+import { useExamStore } from "@/stores/exam";
 
 const MAX_CLICK_COUNT = 3;
 
