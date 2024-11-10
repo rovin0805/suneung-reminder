@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useOMRStore } from "@/stores/omr";
 import { ExamSubjectType } from "@/types/exam";
 import TimerBUbbleMsg from "./TimerBubbleMsg";
+import useDynamicTop from "../../hooks/useDynamicTop";
 
 const LIMIT_SECONDS = 90;
 
@@ -40,7 +41,18 @@ const TimerBar = ({ onClickNext }: TimerBarProps) => {
     }
   }, [timeLeft]);
 
-  // 시간에 따른 스타일 설정
+  // 말풍선 메시지
+  useEffect(() => {
+    if (timeLeft <= CHECK_POINT1 && timeLeft > CHECK_POINT2) {
+      setMessage(MSG1);
+    } else if (timeLeft <= CHECK_POINT2 && timeLeft > 5) {
+      setMessage(MSG2);
+    } else {
+      setMessage("");
+    }
+  }, [timeLeft]);
+
+  const dynamicTop = useDynamicTop();
   const containerStyle = {
     background:
       timeLeft > CHECK_POINT1
@@ -54,32 +66,25 @@ const TimerBar = ({ onClickNext }: TimerBarProps) => {
   const bubblePosition = {
     left: `calc(${((LIMIT_SECONDS - timeLeft) / LIMIT_SECONDS) * 100}% - ${
       message === MSG1 ? 123 : 76
-    }px)`, // 125px은 말풍선의 너비(250px)의 절반
+    }px)`,
   };
 
-  // 말풍선 메시지
-  useEffect(() => {
-    if (timeLeft <= CHECK_POINT1 && timeLeft > CHECK_POINT2) {
-      setMessage(MSG1);
-    } else if (timeLeft <= CHECK_POINT2 && timeLeft > 1) {
-      setMessage(MSG2);
-    } else {
-      setMessage("");
-    }
-  }, [timeLeft]);
-
   return (
-    <>
-      <div className="relative w-full h-[10px]" style={containerStyle}>
-        {/* 프로그레스 바 */}
-        <div className="h-full" style={progressBarStyle}></div>
+    <div
+      className={`w-full h-[10px] fixed`}
+      style={{
+        top: `${dynamicTop}px`, // 동적으로 계산된 top 값 적용
+        ...containerStyle,
+      }}
+    >
+      {/* 프로그레스 바 */}
+      <div className="h-full" style={progressBarStyle}></div>
 
-        {/* 말풍선 */}
-        {message && (
-          <TimerBUbbleMsg message={message} bubblePosition={bubblePosition} />
-        )}
-      </div>
-    </>
+      {/* 말풍선 */}
+      {message && (
+        <TimerBUbbleMsg message={message} bubblePosition={bubblePosition} />
+      )}
+    </div>
   );
 };
 
