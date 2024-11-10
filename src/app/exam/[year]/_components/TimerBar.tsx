@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useOMRStore } from "@/stores/omr";
 import { ExamSubjectType } from "@/types/exam";
 import TimerBUbbleMsg from "./TimerBubbleMsg";
-import useDynamicTop from "../../hooks/useDynamicTop";
+import useDynamicTop from "../_hooks/useDynamicTop";
 
 const LIMIT_SECONDS = 90;
 
