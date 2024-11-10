@@ -52,12 +52,17 @@ const CustomSelect = ({ currentValue, onChange }: CustomSelectProps) => {
           {currentValue || "응시 연도"}
         </p>
 
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+        <div
+          className={`absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
           <Image
             src="/svg/arrow_down.svg"
             width={16}
             height={16}
             alt="arrow-down"
+            className={`transition-transform duration-300`}
           />
         </div>
       </div>

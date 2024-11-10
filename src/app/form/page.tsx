@@ -27,6 +27,18 @@ const FormPage = () => {
 
   const storeYear = useExamStore((state) => state.setYear);
   const storeName = useStudentStore((state) => state.setName);
+  const [error, setError] = useState<string>("");
+
+  // 이름 검증 함수: 한글로 최대 10글자 이내
+  const validateName = (input: string) => {
+    const koreanNameRegex = /^[가-힣]{1,10}$/;
+    if (input.length > 10 || !koreanNameRegex.test(input)) {
+      setError("최대 10글자 이내의 한글로 작성해 주세요.");
+      return false;
+    }
+    setError(""); // 유효한 경우 오류 메시지 초기화
+    return true;
+  };
 
   const [year, setYear] = useState<ValidYearType | null>(null);
   const [name, setName] = useState<string | null>(null);
@@ -35,10 +47,21 @@ const FormPage = () => {
     setYear(selectedYear);
   };
 
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newName = e.target.value;
+    if (newName === "") {
+      setError("");
+    }
+    setName(newName);
+  };
+
   const onClickButton = () => {
     if (year === END_YEAR) {
       onOpenCharmModal();
     } else {
+      if (!validateName(name!)) {
+        return;
+      }
       storeYear(year);
       storeName(name!);
       onOpenHandwritingModal();
@@ -64,25 +87,31 @@ const FormPage = () => {
             </p>
           </Row>
 
-          <input
-            type="text"
-            className="name-input text-primary-700 font-pretendard500 w-[250px] px-[16px] py-[10px] bg-white rounded-[5px] cursor-pointer focus:outline-none"
-            placeholder="이름"
-            value={name || ""}
-            onChange={(e) => setName(e.target.value)}
-          />
+          <div>
+            <input
+              type="text"
+              className="name-input text-primary-700 font-pretendard500 w-[250px] px-[16px] py-[10px] bg-white rounded-[5px] cursor-pointer focus:outline-none"
+              placeholder="이름"
+              value={name || ""}
+              onChange={handleNameChange}
+              maxLength={10}
+            />
+            {error && (
+              <p className="text-white font-pretendard500 mt-[10px] text-center text-sm md:text-base">
+                {error}
+              </p>
+            )}
+          </div>
         </Col>
 
         <SharedButton
           text="응시하기"
           onClick={onClickButton}
           buttonProps={{
-            disabled: !year || !name,
+            disabled: !year || !name || error !== "",
           }}
         />
 
-        <div />
-        <div />
         <div />
       </ColorContainer>
 

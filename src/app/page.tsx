@@ -51,7 +51,7 @@ export default function HomePage() {
             눈 떠보니 수능날?
           </p>
           <p className="font-pretendard600 text-white text-[20px] leading-[24px]">
-            내가 봤던 수능 다시보기
+            내가 봤던 수능 다시 보기
           </p>
         </Col>
 

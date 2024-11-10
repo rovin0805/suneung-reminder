@@ -4,11 +4,11 @@ import LayoutWrapper from "@/app/_components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "눈 떠보니 수능날? | afterdinnerclub",
-  description: "내가 봤던 수능 다시보기!",
+  description: "내가 봤던 수능 다시 보기!",
   icons: {
     icon: "/svg/favicon.svg",
   },
-  keywords: ["수능", "수능날", "수능 다시보기", "afterdinnerclub"],
+  keywords: ["수능", "수능날", "수능 다시 보기", "afterdinnerclub"],
   openGraph: {
     url: "https://afterdinnerclub.kr/",
     siteName: "afterdinnerclub",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "/img/og_img.png",
         width: 1200,
         height: 630,
-        alt: "afterdinnerclub 수능 다시보기 이미지",
+        alt: "afterdinnerclub 수능 다시 보기 이미지",
       },
     ],
     locale: "ko_KR",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "눈 떠보니 수능날? | afterdinnerclub",
-    description: "내가 봤던 수능 다시보기!",
+    description: "내가 봤던 수능 다시 보기!",
     images: [
       {
         url: "/img/og_img.png",
         width: 1200,
         height: 630,
-        alt: "afterdinnerclub 수능 다시보기 이미지",
+        alt: "afterdinnerclub 수능 다시 보기 이미지",
       },
     ],
   },

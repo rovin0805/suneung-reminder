@@ -10,7 +10,7 @@ const GradingTime = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push("/result");
-    }, 1000);
+    }, 3000);
   }, []);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const GradingTime = () => {
           return prevDots + ".";
         }
       });
-    }, 200);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);
