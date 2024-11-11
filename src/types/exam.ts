@@ -21,6 +21,7 @@ export type ValidYearType =
   | 2020
   | 2021
   | 2022
+  | 2023
   | typeof END_YEAR;
 
 export type ExamSubjectType = "k" | "m" | "e";
